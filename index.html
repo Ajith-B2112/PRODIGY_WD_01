@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ProdigySite</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" crossorigin="anonymous" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <!-- AOS Animation CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+      background-color: #000;
+      color: #fff;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      backdrop-filter: blur(10px);
+      background: rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+      z-index: 9999;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      height: 80px;
+    }
+
+    .navbar.scrolled {
+      background: rgba(0, 0, 0, 0.8);
+    }
+
+    .logo {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 30px;
+      color: #00ffe7;
+      text-shadow: 0 0 15px #00ffe7;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+    }
+
+    .nav-links li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .nav-links li a:hover {
+      color: #00ffe7;
+      transform: scale(1.1);
+    }
+
+    section {
+      position: relative;
+      padding: 120px 20px 80px;
+      text-align: center;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    section::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1;
+    }
+
+    section > * {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero {
+      min-height: 100vh;
+      padding-top: 160px;
+      background-image: url('https://images.unsplash.com/photo-1630450203924-63ba9c03d491?auto=format&fit=crop&w=1600&q=80');
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: 64px;
+      color: #ffffff;
+      margin-bottom: 20px;
+      text-shadow: 0 0 15px #00ffe7;
+      animation: fadeInDown 1.5s;
+    }
+
+    .hero p {
+      font-size: 22px;
+      color: #ccc;
+      margin-bottom: 30px;
+      animation: fadeInUp 1.5s;
+    }
+
+    .btn-cta {
+      padding: 14px 30px;
+      font-size: 16px;
+      background: linear-gradient(to right, #00ffe7, #00bfbf);
+      color: #000;
+      font-weight: bold;
+      border: none;
+      border-radius: 30px;
+      box-shadow: 0 0 20px #00ffe7;
+      transition: all 0.4s ease;
+    }
+
+    .btn-cta:hover {
+      background: #00bfbf;
+      color: #fff;
+      transform: scale(1.05);
+    }
+
+    #features {
+      background-image: url('https://images.unsplash.com/photo-1549921296-3a6b4a1786d4?auto=format&fit=crop&w=1600&q=80');
+    }
+
+    #about {
+      background-image: url('https://images.unsplash.com/photo-1603983893286-ec83db716d75?auto=format&fit=crop&w=1600&q=80');
+    }
+
+    #contact {
+      background-image: url('https://images.unsplash.com/photo-1526814078171-8c6a3c6b8f49?auto=format&fit=crop&w=1600&q=80');
+    }
+
+    h2 {
+      font-size: 42px;
+      margin-bottom: 25px;
+      color: #00ffe7;
+      animation: zoomIn 1.2s;
+    }
+
+    p {
+      max-width: 700px;
+      margin: auto;
+      color: #ccc;
+      font-size: 18px;
+      animation: fadeIn 1.2s;
+    }
+
+    @media screen and (max-width: 768px) {
+      .hero h1 {
+        font-size: 42px;
+        text-align: center;
+      }
+      .nav-links {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar" id="navbar">
+    <div class="logo">ProdigySite</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <h1 class="animate__animated animate__fadeInDown">Welcome to ProdigySite</h1>
+    <p class="animate__animated animate__fadeInUp animate__delay-1s">Where innovation meets elegance. Explore our futuristic design.</p>
+    <a href="#features" class="btn-cta animate__animated animate__fadeInUp animate__delay-2s">Explore More</a>
+  </section>
+
+  <!-- Features -->
+  <section id="features" data-aos="fade-up">
+    <h2>Elite Features</h2>
+    <p>Fully responsive, visually stunning, and loaded with interactive animations that enhance your web experience.</p>
+  </section>
+
+  <!-- About -->
+  <section id="about" data-aos="fade-up">
+    <h2>About Us</h2>
+    <p>ProdigySite is dedicated to building high-impact digital experiences that resonate with the future of design.</p>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" data-aos="fade-up">
+    <h2>Let's Connect</h2>
+    <p>Want to work with us or create your own ProdigySite? Let’s talk and make it happen.</p>
+  </section>
+
+  <!-- Scroll Effect -->
+  <script>
+    window.addEventListener('scroll', function () {
+      const navbar = document.getElementById('navbar');
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+  </script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" crossorigin="anonymous"></script>
+
+  <!-- AOS Animation JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1200,
+      once: true,
+    });
+  </script>
+</body>
+</html>
